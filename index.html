@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso React JS Pagina 0</title>
+
+    <style>
+        img{
+            box-shadow: 0 0 30px #999;
+            border-radius: 50%;
+            width: 100px;
+        }
+
+        picture{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Woman In Tech</h1>
+    <div id="app"></div>
+    <script>
+        const $app = document.getElementById('app');
+        const Avatar = params => {
+            const src = `https://randomuser.me/api/portraits/women/${params.id}.jpg` 
+            return `
+            <picture>
+                <img src="${src}" alt="">
+                ${params.name}
+            </picture>
+            `;
+        };
+
+        $app.innerHTML += Avatar ({id: 1, name: 'Andrea'});
+        $app.innerHTML += Avatar ({id: 2, name: 'Manuela'});
+    </script>
+</body>
+</html>
